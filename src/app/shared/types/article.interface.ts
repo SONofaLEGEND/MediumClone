@@ -6,7 +6,7 @@ export interface ArticleInterface {
     body: string
     createdAt: string
     updatedAt: string
-    tagList: string
+    tagList: string[]
     description: string
     author:ProfileInterface
     favorited: boolean

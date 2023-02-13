@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { ActionTypes } from "src/app/auth/store/actionTypes";
+import { ActionTypes } from "../actionTypes";
 import { GetFeedResponseInterface } from "../../types/getFeedResponse.interface";
 
 export const getFeedAction = createAction(
@@ -13,6 +13,6 @@ export const getFeedSuccessAction = createAction(
 
 )
 export const getFeedFailureAction = createAction(
-    ActionTypes.GET_FEED_FAILURE,
+    ActionTypes.GET_FEED_FAILURE
 
 )
