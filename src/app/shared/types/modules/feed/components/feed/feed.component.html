@@ -25,6 +25,13 @@
             <span>Read more..</span>
         </a>
     </div>
-    PAGINATION
+    <app-pagination
+    [total]="(feed$ | async)?.articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+    >
+
+    </app-pagination>
 </div>
 

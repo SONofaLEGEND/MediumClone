@@ -14,6 +14,7 @@ import { AuthInterceptor } from './shared/types/services/authinterceptor';
 import { GlobalFeedComponent } from './globalFeed/components/global-feed/global-feed.component';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { FeedModule } from './shared/types/modules/feed/feed.module';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,6 @@ import { FeedModule } from './shared/types/modules/feed/feed.module';
     AuthModule,
     HttpClientModule,
     EffectsModule.forRoot([]),
-    StoreModule.forRoot({}),
-    StoreModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25, 
       logOnly: !isDevMode(), 
@@ -37,7 +36,11 @@ import { FeedModule } from './shared/types/modules/feed/feed.module';
     EffectsModule.forRoot([]),
     TopBarModule,
     GlobalFeedModule,
-    FeedModule
+    FeedModule,
+    StoreModule.forRoot({router:routerReducer}),
+    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [
     PersistanceService,
