@@ -15,6 +15,8 @@ import { GlobalFeedComponent } from './globalFeed/components/global-feed/global-
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { FeedModule } from './shared/types/modules/feed/feed.module';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { YourFeedModule } from './yourFeed/yourFeed.module';
+import { TagFeedModule } from './tagFeed/tagFeed.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
     StoreModule.forRoot({router:routerReducer}),
     StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    YourFeedModule,
+    TagFeedModule
   ],
   providers: [
     PersistanceService,
