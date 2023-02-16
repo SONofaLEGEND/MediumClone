@@ -12,6 +12,7 @@ import { ErrorMessageModule } from "../shared/types/modules/errorMessage/errorMe
 import { TagListModule } from "../shared/types/modules/tagList/tagList.module";
 import { DeleteArticleEffect } from "./store/effects/deleteArticle.effect";
 import { ArticleService } from "./services/article.service";
+import { EditArticleModule } from "../editArticle/editArticle.module";
 const routes = [
     {
         path: 'articles/:slug',
@@ -30,7 +31,8 @@ const routes = [
         EffectsModule.forFeature([GetArticleEffect, DeleteArticleEffect]),
         LoadingModule,
         ErrorMessageModule,
-        TagListModule
+        TagListModule,
+        EditArticleModule
     ]
 })
 export class ArticleModule{}

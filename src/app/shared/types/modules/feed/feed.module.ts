@@ -12,8 +12,19 @@ import { FeedComponent } from './components/feed/feed.component';
 import { FeedService } from "./services/feed.service";
 import { GetFeedEffect } from "./store/effects/getFeed.effect";
 import { reducers } from "./store/reducers";
+import { AddToFavoriteComponent } from "../addToFavorites/components/addToFavorites.component";
+import { AddToFavoriteModule } from "../addToFavorites/addToFavorites.module";
 
 @NgModule ({
+    declarations: [
+        FeedComponent
+    ],
+    exports: [
+        FeedComponent
+    ],
+    providers: [
+        FeedService
+    ],
     imports: [
         CommonModule,
         EffectsModule.forFeature([GetFeedEffect]),
@@ -23,16 +34,8 @@ import { reducers } from "./store/reducers";
         LoadingModule,
         PaginationModule,
         TagListModule,
-        PopularTagsModule
-    ],
-    declarations: [
-    FeedComponent
-  ],
-  exports: [
-    FeedComponent
-  ],
-  providers: [
-    FeedService
-  ]
+        PopularTagsModule,
+        AddToFavoriteModule
+    ]
 })
 export class FeedModule{}
