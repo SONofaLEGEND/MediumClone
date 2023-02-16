@@ -21,6 +21,7 @@ import { ArticleModule } from './article/article.module';
 import { CreateArticleModule } from './createArticle/createArticle.module';
 import { SettingsModule } from './settings/settings.module';
 import { EditArticleModule } from './editArticle/editArticle.module';
+import { UserProfileModule } from './userProfile/userProfile.module';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { EditArticleModule } from './editArticle/editArticle.module';
     ArticleModule,
     SettingsModule,
     EditArticleModule,
+    UserProfileModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [
