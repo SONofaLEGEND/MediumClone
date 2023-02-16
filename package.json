@@ -22,6 +22,7 @@
     "@ngrx/router-store": "^15.3.0",
     "@ngrx/store": "^15.3.0",
     "@ngrx/store-devtools": "^15.3.0",
+    "hammerjs": "^2.0.8",
     "query-string": "^8.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
