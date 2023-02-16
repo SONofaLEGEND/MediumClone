@@ -4,6 +4,8 @@ import { AuthStateInterface } from "../types/authState.interface";
 import { getCurrentUserAction, getCurrentUserFailureAction, getCurrentUserSuccessAction } from "./actions/getCurrentUser.action";
 import { loginAction, loginFailureAction, loginSuccessAction } from "./actions/login.action";
 import { registerAction, registerFailureAction, registerSuccessAction } from "./actions/register.action";
+import { logoutAction } from "./actions/sync.action";
+import { updateCurrentUserFailureAction, updateCurrentUserSuccessAction } from "./actions/updateCurrentUser.action";
 
 const initialState: AuthStateInterface = {
     isSubmitting: false,
@@ -93,6 +95,23 @@ export const authReducer = createReducer(
             isLoggedIn: false,
            isLoading: false,
            currentUser: null
+        }) 
+    ),
+    on(
+        updateCurrentUserSuccessAction, 
+        (state, action):AuthStateInterface => ({
+            ...state,
+            
+           currentUser: action.currentUser
+        }) 
+    ),
+    on(
+        logoutAction, 
+        (state):AuthStateInterface => ({
+            ...state,
+            ...initialState,
+            
+           isLoggedIn: false
         }) 
     )
 )

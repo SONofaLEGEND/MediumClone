@@ -17,6 +17,9 @@ import { FeedModule } from './shared/types/modules/feed/feed.module';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { YourFeedModule } from './yourFeed/yourFeed.module';
 import { TagFeedModule } from './tagFeed/tagFeed.module';
+import { ArticleModule } from './article/article.module';
+import { CreateArticleModule } from './createArticle/createArticle.module';
+import { SettingsModule } from './settings/settings.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,11 @@ import { TagFeedModule } from './tagFeed/tagFeed.module';
     StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot({}, {}),
     YourFeedModule,
-    TagFeedModule
+    TagFeedModule,
+    CreateArticleModule,
+    ArticleModule,
+    SettingsModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [
     PersistanceService,

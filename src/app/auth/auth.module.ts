@@ -1,6 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
- 
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { EffectsModule } from "@ngrx/effects";
@@ -14,6 +13,8 @@ import { reducers } from "./store/reducers";
 import { BackendErrorMessagesModule } from "./types/modules/backendErrorMessages/backendErrorMessages.module";
 import { LoginComponent } from './components/login/login.component';
 import { GetCurrentUserEffect } from "./store/effects/getCurrentUser.effect";
+import { UpdateCurrentUserEffect } from "./store/effects/updateCurrentUser.effect";
+import { LogoutEffect } from "./store/effects/logout.effect";
 
 const routes = [
     {
@@ -31,7 +32,12 @@ const routes = [
         RouterModule.forChild(routes),
         ReactiveFormsModule,
         BackendErrorMessagesModule,
-        EffectsModule.forFeature([RegisterEffect, LoginEffect, GetCurrentUserEffect]),
+        EffectsModule.forFeature([
+            RegisterEffect, 
+            LoginEffect, 
+            GetCurrentUserEffect,
+            UpdateCurrentUserEffect,
+            LogoutEffect]),
         StoreModule.forFeature('auth', reducers)
     ],
     declarations: [RegisterComponent, LoginComponent],
