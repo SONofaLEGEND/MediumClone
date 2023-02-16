@@ -7,7 +7,6 @@
                     <h4>{{userProfile.username}}</h4>
                     <p>{{userProfile.bio}}</p>
                     <div>
-                        Follow user
                         <a
                         *ngIf="isCurrentUserProfile$ | async" 
                         class="btn btn-sm btn-outline-secondary action-btn" [routerLink]="['/settings']">Edit Profile</a>

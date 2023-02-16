@@ -27,7 +27,8 @@ const routes = [
     StoreModule.forFeature('userProfile', reducers),
     FeedModule
 ],
-    providers: [UserProfileService]
+    providers: [UserProfileService],
+    exports: [UserProfileComponent]
 })
 
 export class UserProfileModule{}

@@ -14,6 +14,7 @@ export class AuthService {
     getUser(response: AuthResponseInterface): CurrentUserInterface {
         return response.user;
     }
+
     register(data:RegisterRequestInterface):
     Observable<CurrentUserInterface>{
         const url = environment.apiUrl + '/users'
@@ -37,7 +38,7 @@ export class AuthService {
 
     updateCurrentUser(data: CurrentUserInputInterface):Observable<CurrentUserInterface> {
         const url = environment.apiUrl + '/user'
-        return this.http.put<AuthResponseInterface>(url, {profile:data})
+        return this.http.put<AuthResponseInterface>(url, {user:data})
         .pipe(map(this.getUser))
     }
 }

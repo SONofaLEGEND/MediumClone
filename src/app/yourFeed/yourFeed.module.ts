@@ -6,6 +6,7 @@ import { BannerModule } from "../shared/types/modules/banner/banner.module";
 import { PopularTagsModule } from "../shared/types/modules/popularTags/popularTags.module";
 import { FeedTogglerModule } from "../shared/types/modules/feedToggler/feedToggler.module";
 import { YourFeedComponent } from "./components/your-feed/your-feed.component";
+import { UserProfileModule } from "../userProfile/userProfile.module";
 const routes = [
     {
         path: 'feed',
@@ -23,7 +24,8 @@ const routes = [
         FeedModule,
         BannerModule,
         PopularTagsModule,
-        FeedTogglerModule
+        FeedTogglerModule,
+        UserProfileModule
     ]
 })
 export class YourFeedModule{}
