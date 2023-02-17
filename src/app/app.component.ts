@@ -8,7 +8,7 @@ import { getCurrentUserAction } from './auth/store/actions/getCurrentUser.action
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'ngrxtutorial';
+  title = 'medium clone';
   constructor(private store:Store) {}
 
   ngOnInit(): void {
